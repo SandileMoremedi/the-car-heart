@@ -1,0 +1,49 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  h1 {
+    text-align: center;
+  }
+
+  .items {
+    display: flex;
+    justify-content: space-around;
+    a {
+      font-size: 1.2rem;
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+      a {
+        color: white;
+        height: 50px;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .privacy-policy {
+      display: flex;
+      flex-direction: column;
+      flex-direction: column;
+      a {
+        color: white;
+        height: 50px;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+@include med-max {
+  .items {
+    gap: 10px;
+    .logo {
+      display: none;
+    }
+  }
+}

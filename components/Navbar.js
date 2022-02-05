@@ -6,14 +6,14 @@ const Navbar = () => {
     <nav className="nav">
       <h1>TCH</h1>
       <div
-        className={navbar ? "navbar open" : "navbar"}
+        className={navbar ? "navbar" : "navbar open"}
         onClick={() => setNavbar(!navbar)}
       >
         <span className="bar"></span>
         <span className="bar"></span>
         <span className="bar"></span>
       </div>
-      <ul onClick={() => setNavbar(!navbar)} className={navbar ? "open" : ""}>
+      <ul onClick={() => setNavbar(!navbar)} className={navbar ? "" : "open"}>
         <li>
           <Link href="/">Home</Link>
         </li>
