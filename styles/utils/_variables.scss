@@ -1,0 +1,68 @@
+// I put the breakpoints of the views I am planning on using
+$breakpoints: (
+  "xs": 0px,
+  "sm": 320px,
+  "med": 770px,
+  "lg": 1024px,
+  "xl": 1200px,
+);
+
+@mixin xs-min {
+  @media (min-width: map-get($breakpoints, "xs")) {
+    @content;
+  }
+}
+
+@mixin sm-min {
+  @media (min-width: map-get($breakpoints, "sm")) {
+    @content;
+  }
+}
+
+@mixin med-min {
+  @media (min-width: map-get($breakpoints, "med")) {
+    @content;
+  }
+}
+
+@mixin lg-min {
+  @media (min-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+
+@mixin xl-min {
+  @media (min-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}
+
+@mixin xs-max {
+  @media (max-width: map-get($breakpoints, "xs")) {
+    @content;
+  }
+}
+
+@mixin sm-max {
+  @media (max-width: map-get($breakpoints, "sm")) {
+    @content;
+  }
+}
+
+@mixin med-max {
+  @media (max-width: map-get($breakpoints, "med")) {
+    @content;
+  }
+}
+
+@mixin lg-max {
+  @media (max-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+
+@mixin xl-max {
+  @media (max-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}
