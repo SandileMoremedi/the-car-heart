@@ -1,10 +1,31 @@
+@import "../utils/variables";
 .home header {
   background-image: url("../../public/speed.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  section {
+    max-width: 50vw;
+  }
   h1 {
-    color: white;
+    font-size: 3rem;
+  }
+  p {
+    font-size: 2rem;
+  }
+  i {
+    font-size: 1.5rem;
+  }
+}
+@include med-max {
+  header h1 {
+    font-size: 2rem !important;
+  }
+  header p {
+    font-size: 1.3rem !important;
   }
 }

@@ -3,7 +3,7 @@
   background-color: white;
 }
 
-@include sm-max {
+@include med-max {
   .nav {
     display: flex;
     align-items: center;
@@ -11,6 +11,9 @@
     position: relative;
     padding: 0 20px;
     margin: 0 auto;
+    h1 {
+      color: #000;
+    }
     ul.open {
       right: -40vw;
     }
@@ -23,18 +26,19 @@
       margin: 0;
       background-color: black;
       height: 100vh;
+      display: flex;
+      flex-direction: column;
       li {
         list-style: none;
         padding: 0;
-        height: 50px;
         display: flex;
-
         a {
-          height: 100%;
-          width: 100%;
           color: white;
+          width: 100%;
+          // margin-bottom: 10px;
           text-decoration: none;
-          padding: 10px 20px;
+          padding: 40px 30px;
+          font-size: 1.2rem;
           &:hover {
             background-color: white;
             color: #000;
@@ -68,10 +72,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1000px;
+    // max-width: 1000px;
     margin: 0 auto;
     h1 {
       margin-left: 40px;
+      color: black;
     }
     ul {
       display: flex;
@@ -80,7 +85,13 @@
         list-style: none;
         a {
           padding: 20px;
-          color: white;
+          // color: white;
+          color: black;
+          font-size: 1.2rem;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }

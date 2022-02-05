@@ -1,1 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,400;1,100&family=Cinzel:wght@400;500&family=Orbitron:wght@400;500;900&family=Rubik&display=swap");
+@import "../utils/variables";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $RobotText;
+}
+
+a,
+p,
+i {
+  font-family: $SimpleText;
+}

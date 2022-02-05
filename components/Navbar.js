@@ -4,7 +4,7 @@ const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   return (
     <nav className="nav">
-      <h1>The Car Heart</h1>
+      <h1>TCH</h1>
       <div
         className={navbar ? "navbar open" : "navbar"}
         onClick={() => setNavbar(!navbar)}

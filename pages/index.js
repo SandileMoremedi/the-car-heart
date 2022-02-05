@@ -12,8 +12,24 @@ export default function Home() {
         <title>The Car Heart | Home</title>
       </Head>
       <header>
-        <h1>The Car Heart</h1>
+        <section>
+          <h1>The Car Heart</h1>
+          <p>
+            <q>
+              I am emotional about engines, if you hurt my car, you heart my
+              heart
+            </q>
+          </p>
+          <span>
+            <i>-Amit Kalantri</i>
+          </span>
+        </section>
       </header>
+      <main>
+        <section>
+          <h2>Welcome</h2>
+        </section>
+      </main>
     </div>
   );
 }
