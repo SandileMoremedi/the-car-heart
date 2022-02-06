@@ -1,0 +1,13 @@
+@import "../utils/variables";
+.about {
+  h1 {
+    text-align: center;
+  }
+  main {
+    width: 70vw;
+    gap: 30px;
+    p {
+      font-size: 2rem;
+    }
+  }
+}
