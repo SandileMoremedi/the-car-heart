@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { motion } from "framer-motion";
+
 export default function Welcome() {
   return (
     <>
@@ -44,18 +46,20 @@ export default function Welcome() {
             </div>
           </a>
         </Link>
-        <Link href="/">
-          <a className="welcome-item">
-            <h3>Expert</h3>
-            <div className="welcome-content">
-              <p>
-                This is the content for al for the people who want to learn
-                about a car body and its basic outer parts.
-              </p>
-              <i className="fas fa-chevron-right"></i>
-            </div>
-          </a>
-        </Link>
+        <motion.div exit={{}}>
+          <Link href="/">
+            <a className="welcome-item">
+              <h3>Expert</h3>
+              <div className="welcome-content">
+                <p>
+                  This is the content for al for the people who want to learn
+                  about a car body and its basic outer parts.
+                </p>
+                <i className="fas fa-chevron-right"></i>
+              </div>
+            </a>
+          </Link>
+        </motion.div>
       </div>
     </>
   );

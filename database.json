@@ -1,0 +1,28 @@
+{
+  "blogs": [
+    {
+      "title": "The engine",
+      "body": "The engine is a part of a vehicle that is responsible for the generation of energy so a car can move.",
+      "date": "25 April 2021",
+      "image": "/ford.jpg"
+    },
+    {
+      "title": "Wheels",
+      "body": "The engine is a part of a vehicle that is responsible for the generation of energy so a car can move.",
+      "date": "25 April 2021",
+      "image": "/benz.jpg"
+    },
+    {
+      "title": "Wheels",
+      "body": "The engine is a part of a vehicle that is responsible for the generation of energy so a car can move.",
+      "date": "25 April 2021",
+      "image": "/benz.jpg"
+    },
+    {
+      "title": "Wheels",
+      "body": "The engine is a part of a vehicle that is responsible for the generation of energy so a car can move.",
+      "date": "25 April 2021",
+      "image": "/benz.jpg"
+    }
+  ]
+}

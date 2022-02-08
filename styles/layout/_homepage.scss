@@ -39,6 +39,17 @@ main {
     }
   }
 }
+
+.popLogo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  display: grid;
+  place-items: center;
+}
 @include med-max {
   header h1 {
     font-size: 2rem !important;

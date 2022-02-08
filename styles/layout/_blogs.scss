@@ -1,0 +1,13 @@
+.blogs {
+  h1 {
+    text-align: center;
+  }
+  .blog-main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    .blog-block {
+      max-width: 100px;
+    }
+  }
+}
