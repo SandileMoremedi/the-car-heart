@@ -4,6 +4,7 @@ export default function PopLogo() {
   return (
     <motion.div
       className="popLogo"
+      initial={{ left: 0 }}
       animate={{ left: "100vw" }}
       transition={{
         duration: 2,
@@ -11,7 +12,7 @@ export default function PopLogo() {
         delay: 2,
       }}
     >
-      <Image src="/logo.png" width={500} height={500} alt="Logo" />
+      <Image src="/Logo.svg" width={500} height={500} alt="Logo" />
     </motion.div>
   );
 }

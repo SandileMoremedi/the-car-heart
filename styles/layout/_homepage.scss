@@ -44,11 +44,12 @@ main {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
   bottom: 0;
-  background-color: black;
+  right: 0;
+  background-color: white;
   display: grid;
   place-items: center;
+  z-index: 99999;
 }
 @include med-max {
   header h1 {

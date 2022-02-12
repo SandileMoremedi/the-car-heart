@@ -1,8 +1,12 @@
+import Head from "next/head";
 import Image from "next/image";
 
 export default function About() {
   return (
     <div className="about">
+      <Head>
+        <title>The Car Heart | About</title>
+      </Head>
       <h1>About</h1>
       <main>
         <p>

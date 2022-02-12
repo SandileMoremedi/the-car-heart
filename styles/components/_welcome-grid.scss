@@ -1,33 +1,36 @@
 @import "../utils/variables";
 .welcome-grid-items {
   display: grid;
+  padding: 20px 0;
   a {
-      color: white;
-      text-decoration: none;
-      background-image: linear-gradient(
-        to right,
-        rgb(15, 32, 39),
-        rgb(32, 58, 67),
-        rgb(44, 83, 100)
-      );
-      cursor: pointer;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 20px;
-      .welcome-content {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        p {
-          width: 70%;
-        }
+    color: white;
+    text-decoration: none;
+    background-image: linear-gradient(
+      to right,
+      rgb(15, 32, 39),
+      rgb(32, 58, 67),
+      rgb(44, 83, 100)
+    );
+    cursor: pointer;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    .welcome-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 400;
+      p {
+        width: 70%;
       }
     }
+  }
 
-    .fas {
-      font-size: 3rem;
-    }
+  .fas {
+    font-size: 3rem;
+  }
 }
 
 @include med-max {
@@ -41,6 +44,5 @@
     place-items: center;
     gap: 30px;
     padding-bottom: 20px;
-
   }
 }

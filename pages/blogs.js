@@ -1,23 +1,28 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Blogs({ data }) {
   return (
     <div className="blogs">
       <h1>Blogs</h1>
 
-      <div className="blog-main">
+      <div className="main-blogs">
         {data &&
-          data.map((info, index) => (
-            <motion.div className="blog-block" key={index}>
+          data.map((blog, index) => (
+            <motion.div className="blog" key={index}>
               <Image
                 width={400}
                 height={400}
-                src={info.image}
+                src={blog.image}
                 alt="Blog Main Image"
               />
-              <h2>{info.title}</h2>
-              <p>{info.body}</p>
+              <div className="content">
+                <Link href={`/beginner/${blog.id}`}>
+                  <h3 className="blog-link">{blog.title}</h3>
+                </Link>
+                <p>{blog.body}</p>
+              </div>
             </motion.div>
           ))}
       </div>

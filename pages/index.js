@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import PopLogo from "../components/Home/PopLogo";
 import Welcome from "../components/Home/Welcome";
@@ -8,7 +9,7 @@ export default function Home() {
   return (
     <>
       <PopLogo />
-      <div className="home">
+      <motion.div className="home">
         <Head>
           <meta
             name="description"
@@ -40,10 +41,80 @@ export default function Home() {
         </header>
         <main>
           <section className="welcome">
-            <Welcome />
+            <h2>Welcome</h2>
+
+            <p>
+              I see you have found home, where every car geek lives. This
+              website was made for you and what you are most interested in,
+              cars.
+            </p>
+            <p>
+              We teach and learn all about cars, from the most simple things
+              such as a steering wheel&apos;s main function to the most complex
+              components of a car.
+            </p>
+            <p>
+              So get comfortable for all the blogs, the videos and all the
+              contents in this website. This is your new home now. Welcome Home.
+            </p>
+
+            <p>There are 3 levels of information.</p>
+            <div className="welcome-grid-items">
+              <Link href="/beginner/">
+                <motion.a
+                  className="welcome-item"
+                  whileHover={{
+                    scale: 1.1,
+                  }}
+                >
+                  <h3>Beginner</h3>
+                  <div className="welcome-content">
+                    <p>
+                      This is the content for all for the people who want to
+                      learn about a car body and its basic outer parts.
+                    </p>
+                    <i className="fas fa-chevron-right"></i>
+                  </div>
+                </motion.a>
+              </Link>
+              <Link href="/intermediate/">
+                <motion.a
+                  className="welcome-item"
+                  whileHover={{
+                    scale: 1.1,
+                  }}
+                >
+                  <h3>Intermediate</h3>
+                  <div className="welcome-content">
+                    <p>
+                      This is the content for all for the people who want to
+                      learn about a car body and its basic outer parts.
+                    </p>
+                    <i className="fas fa-chevron-right"></i>
+                  </div>
+                </motion.a>
+              </Link>
+              <Link href="/expert/">
+                <motion.a
+                  className="welcome-item"
+                  whileHover={{
+                    scale: 1.1,
+                  }}
+                >
+                  <h3>Expert</h3>
+                  <div className="welcome-content">
+                    <p>
+                      This is the content for all for the people who want to
+                      learn about a car body and its basic outer parts.
+                    </p>
+                    <i className="fas fa-chevron-right"></i>
+                  </div>
+                </motion.a>
+              </Link>
+            </div>
           </section>
         </main>
-      </div>
+      </motion.div>
     </>
   );
 }

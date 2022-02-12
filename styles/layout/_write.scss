@@ -1,0 +1,121 @@
+@import "../utils/variables";
+
+.blog-write {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+
+  .write-blog-image {
+    object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 999;
+  }
+
+  .write-image-block {
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+
+    input {
+      background-color: black;
+      color: white;
+      flex: 6;
+      border: 0;
+      font-size: 1.3rem;
+      padding-left: 5px;
+      border-bottom: 1px solid white;
+    }
+  }
+
+  .blog-image-input {
+    // font-size: 3rem;
+    width: 50px !important;
+    height: 50px !important;
+    border: 3px solid wheat;
+    display: flex;
+    flex: 0.9;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    cursor: pointer;
+    border-radius: 100px;
+  }
+}
+.write-image {
+  height: 200px;
+  width: 60vw;
+  background-color: saddlebrown;
+}
+.textarea {
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+  font-size: 1.3rem;
+  font-family: sans-serif;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+}
+@include lg-min {
+  .blog-write {
+    flex-direction: row !important;
+    gap: 50px;
+    align-items: flex-start;
+    .illustrationImages {
+      //   background-color: yellow;
+      width: 20vw;
+      min-height: 50vh;
+      padding: 10px;
+      border: 3px solid white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .submit-button {
+        width: 90%;
+        margin-top: 30px;
+        padding: 10px 0;
+        border-radius: 10px;
+        background-color: white;
+        color: black;
+        border: 1px solid white;
+        font-size: 1.1rem;
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
+
+      .blog-image__aside {
+        width: 90%;
+        height: 70px;
+        display: flex;
+        border: 1px solid #ddd;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      form {
+        // padding: 0 30px;
+        input {
+          margin-top: 10px;
+          font-size: 1rem;
+          // padding: 10px;
+          padding: 10px 0;
+          width: 90%;
+
+          color: white;
+          background-color: black;
+          border: 0;
+          border-bottom: 1px solid white;
+        }
+      }
+    }
+  }
+}

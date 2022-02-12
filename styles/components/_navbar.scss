@@ -13,9 +13,11 @@
     margin: 0 auto;
     h1 {
       color: #000;
+      cursor: pointer;
     }
     ul.open {
       right: -40vw;
+      transition: right 500ms ease-in-out;
     }
     ul {
       position: absolute;
@@ -28,6 +30,8 @@
       height: 100vh;
       display: flex;
       flex-direction: column;
+      z-index: 999;
+      transition: right 500ms ease-in;
       li {
         list-style: none;
         padding: 0;
@@ -53,9 +57,11 @@
       flex-direction: column;
       position: relative;
       right: 40vw;
+      transition: right 500ms ease-in;
     }
     .navbar.open {
       right: 0vw;
+      transition: right 500ms ease-in-out;
     }
     .bar {
       background-color: black;
