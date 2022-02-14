@@ -17,6 +17,10 @@ import PopLogo from "../../components/Home/PopLogo";
 import Head from "next/head";
 
 export default function Beginner({ blogs }) {
+  const [value, loading, error] = useCollection(
+    collection(getFirestore(app), "beginner")
+  );
+  console.log(value !== true);
   return (
     <>
       <Head>
@@ -26,25 +30,25 @@ export default function Beginner({ blogs }) {
       <motion.div className="beginner">
         <h1>Beginner Blogs</h1>
         <main className="main-blogs">
-          {blogs && (
+          {value !== true && (
             <>
-              {blogs.map((blog, index) => (
-                <div className="blog" key={index}>
+              {value.forEach((blog) => (
+                <div className="blog">
                   <div className="image">
                     <Image
-                      src={blog.image}
+                      src={blog.data().image}
                       width={350}
                       height={300}
                       alt="Blog Image"
                     />
                   </div>
                   <div className="content">
-                    <Link href={`/beginner/${blog.id}`}>
+                    <Link href={`/beginner/${blog.data().id}`}>
                       <a>
                         <h3 className="blog-link">{blog.title}</h3>
                       </a>
                     </Link>
-                    <p>{blog.body}</p>
+                    <p>{blog.data().body}</p>
                   </div>
                 </div>
               ))}
@@ -54,27 +58,4 @@ export default function Beginner({ blogs }) {
       </motion.div>
     </>
   );
-}
-// export async function getStaticProps(){
-//   const [value, loading, error] = useCollection(
-//     collection(getFirestore(app), "beginner")
-//   );
-//   value.forEach((docs) => {
-//     console.log(docs.data());
-//   });
-
-//   if (error) {
-//     console.error(error.message);
-//   }
-// }
-
-export async function getStaticProps() {
-  const res = await fetch("http://localhost:8800/blogs");
-  const blogs = await res.json();
-
-  return {
-    props: {
-      blogs,
-    },
-  };
 }

@@ -1,6 +1,18 @@
 @import "../utils/variables";
 .nav {
   background-color: white;
+  .profile-header {
+    display: flex;
+    flex-direction: row;
+    padding-right: 30px;
+    gap: 20px;
+    h4 {
+      color: black;
+    }
+    img {
+      object-fit: contain;
+    }
+  }
 }
 
 @include med-max {
@@ -80,13 +92,19 @@
     align-items: center;
     // max-width: 1000px;
     margin: 0 auto;
+    .profile-header {
+      flex-direction: 3;
+    }
+
     h1 {
       margin-left: 40px;
       color: black;
+      flex: 3;
     }
     ul {
       display: flex;
       margin-right: 40px;
+      flex: 6;
       li {
         list-style: none;
         a {
