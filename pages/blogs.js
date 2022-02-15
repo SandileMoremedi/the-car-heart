@@ -1,15 +1,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { collection, getFirestore } from "firebase/firestore";
-import { app } from "../Firebase/config";
-import useBeginner from "../Firebase/useFirestore";
-const collect = getFirestore(app);
-const colRef = collection(collect, "beginner");
 
 export default function Blogs() {
-  var { data } = useBeginner(colRef);
-  console.log(data);
   return (
     <>
       <h1>Blogs</h1>

@@ -1,176 +1,125 @@
 @import "../utils/variables";
 
-.blog-write {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.write {
   padding-top: 40px;
-
-  .write-blog-image {
-    object-fit: cover;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: 999;
-  }
-
-  .write-image-block {
+  display: grid;
+  place-items: center;
+  form {
     display: flex;
-    margin-top: 20px;
-    gap: 20px;
-
-    input {
-      background-color: black;
-      color: white;
-      flex: 6;
-      border: 0;
-      font-size: 1.3rem;
-      padding-left: 5px;
-      border-bottom: 1px solid white;
+    // flex-direction: column;
+    gap: 30px;
+    .blog-textarea {
+      max-width: 60vw;
     }
   }
-
-  .blog-image-input {
-    // font-size: 3rem;
-    width: 50px !important;
-    height: 50px !important;
-    border: 3px solid wheat;
-    display: flex;
-    flex: 0.9;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    cursor: pointer;
-    border-radius: 100px;
+  .write-image {
+    width: 60vw;
+    height: 300px;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
   }
-}
-.write-image {
-  height: 200px;
-  width: 60vw;
-  background-color: saddlebrown;
-}
-.textarea {
-  display: flex;
-  width: 100%;
-  margin-top: 30px;
-  font-size: 1.3rem;
-  font-family: sans-serif;
-  background-color: black;
-  color: white;
-  border: 1px solid white;
-  border-radius: 10px;
-  padding: 10px;
-}
-@include lg-min {
-  .blog-write {
-    flex-direction: row !important;
-    gap: 50px;
-    align-items: flex-start;
-    .illustrationImages {
-      //   background-color: yellow;
-      width: 20vw;
-      min-height: 50vh;
-      padding: 10px;
-      border: 3px solid white;
+  .image-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 60vw;
+    gap: 30px;
+    margin: 40px 0;
+    .file-label {
+      border: 1px solid white;
+      width: 7px !important;
+      height: 7px !important;
+      padding: 20px;
       display: flex;
-      flex-direction: column;
       align-items: center;
-
-      .submit-button {
-        width: 90%;
-        margin-top: 30px;
-        padding: 10px 0;
-        border-radius: 10px;
-        background-color: white;
-        color: black;
-        border: 1px solid white;
-        font-size: 1.1rem;
-        &:hover {
-          background-color: black;
-          color: white;
-        }
-      }
-
-      .blog-image__aside {
-        width: 90%;
-        height: 70px;
-        display: flex;
-        border: 1px solid #ddd;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-      }
-
-      form {
-        // padding: 0 30px;
-        input {
-          margin-top: 10px;
-          font-size: 1rem;
-          // padding: 10px;
-          padding: 10px 0;
-          width: 90%;
-
-          color: white;
-          background-color: black;
-          border: 0;
-          border-bottom: 1px solid white;
-        }
+      justify-content: center;
+      font-size: 3rem;
+      cursor: pointer;
+      border-radius: 50px;
+    }
+    .file-input {
+      display: none;
+    }
+    .top-input {
+      width: 100%;
+      font-size: 1.5rem;
+      padding: 10px 5px;
+      background-color: black;
+      border: 0;
+      border-bottom: 1px solid white;
+      color: white;
+    }
+  }
+  .blog-textarea {
+    width: 100%;
+    font-size: 1.3rem;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .illustration {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    padding: 30px;
+    height: max-content;
+    // justify-content: center;
+    align-items: center;
+    // max-width: 30vw;
+    label {
+      width: 90%;
+      height: 100px;
+      border: 1px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .input-side {
+      width: 90%;
+      padding: 10px 5px;
+      font-size: 1.1rem;
+      background-color: black;
+      border: 0;
+      border-bottom: 1px solid white;
+      // border-radius: 30px;
+      color: white;
+    }
+    .submit-btn {
+      width: 90%;
+      margin-top: 20px;
+      background-color: white;
+      color: black;
+      padding: 20px 0;
+      border-radius: 20px;
+      border: 1px solid white;
+      font-size: 1.2rem;
+      &:hover {
+        background-color: black;
+        color: white;
       }
     }
   }
 }
 @include lg-max {
-  .blog-write {
-    display: flex;
-    flex-direction: column;
-    h3 {
-      text-align: center;
-    }
-    label {
-      text-align: center;
+  form {
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    .illustration {
       width: 100%;
-      border: 1px solid white;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 30px 0;
-      cursor: pointer;
     }
-    form {
-      border: 1px solid white;
-      padding: 20px;
-      border-radius: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      input {
-        margin-top: 10px;
-        font-size: 1rem;
-        // padding: 10px;
-        padding: 10px 6px;
-        width: 100%;
+  }
+}
 
-        color: white;
-        background-color: black;
-        border: 0;
-        border-bottom: 1px solid white;
-      }
-
-      .submit-button {
-        width: 90%;
-        margin-top: 30px;
-        padding: 10px 0;
-        border-radius: 10px;
-        background-color: white;
-        color: black;
-        border: 1px solid white;
-        font-size: 1.1rem;
-        &:hover {
-          background-color: black;
-          color: white;
-        }
-      }
-    }
+@include lg-min {
+  .illustration {
+    max-width: 30vw;
   }
 }

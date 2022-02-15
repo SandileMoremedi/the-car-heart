@@ -7,16 +7,18 @@ export default async function useBeginner(collection) {
 
   const q = query(collection);
   useEffect(() => {
-    getDocs(q).then((res) => {
-      let documents = [];
-      res.docs.forEach((doc) => {
-        documents.push({
-          ...doc.data(),
-          id: doc.id,
+    getDocs(q)
+      .then((res) => {
+        let documents = [];
+        res.docs.forEach((doc) => {
+          documents.push({
+            ...doc.data(),
+            id: doc.id,
+          });
         });
-      });
-      setData(documents);
-    });
+        setData(documents);
+      })
+      .catch((err) => console.log(err.message));
     return data;
   }, []);
 }

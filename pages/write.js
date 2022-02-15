@@ -6,46 +6,55 @@ export default function Write() {
         <title>Write Your Blog</title>
       </Head>
       <div className="write">
-        <div className="top-section">
-          <div className="write-image">
-            <img
-              src="/man-walking.jpg"
-              alt="Blog-image"
-              className="write-blog-image"
-            />
-          </div>
-          <div className="write-image-block">
-            <label htmlFor="blog-image" className="blog-image-input">
-              +
-            </label>
-            <input type="file" id="blog-image" style={{ display: "none" }} />
-            <input type="text" autoFocus={true} placeholder="Enter The Title" />
-          </div>
-        </div>
-        <div className="bottom-section">
-          <textarea
-            placeholder="Tell Us About It"
-            typeof="text"
-            id=""
-            cols="30"
-            rows="10"
-            className="textarea"
-          ></textarea>
-        </div>
-      </div>
-      <aside className="illustrationImages">
-        <h3>Blog Image Illustration</h3>
         <form>
-          <label htmlFor="image" className="blog-image__aside">
-            Add Your Image
-          </label>
-          <input type="file" id="image" style={{ display: "none" }} />
-          <input type="text" placeholder="What is this?" />
-          <button className="submit-button" type="submit">
-            Submit
-          </button>
+          <div className="top">
+            <div className="write-image">
+              <img src="/man-walking.jpg" alt="" />
+            </div>
+            <div className="image-text">
+              <label htmlFor="image" className="file-label">
+                +
+              </label>
+              <input type="file" id="image" className="file-input" />
+
+              <input
+                type="text"
+                placeholder="Title"
+                className="top-input"
+                autoFocus={true}
+              />
+            </div>
+            <textarea
+              name=""
+              id="blog-content"
+              placeholder="Tell us about it"
+              cols="30"
+              rows="10"
+              className="blog-textarea"
+            ></textarea>
+          </div>
+
+          <aside className="illustration">
+            <h3>Illustration</h3>
+            <label htmlFor="illustration-image">Add Image</label>
+            <input
+              type="file"
+              id="illustration-image"
+              style={{ display: "none" }}
+            />
+
+            <input
+              type="text"
+              placeholder="What is this?"
+              className="input-side"
+            />
+
+            <button type="submit" className="submit-btn">
+              Submit
+            </button>
+          </aside>
         </form>
-      </aside>
+      </div>
     </div>
   );
 }
