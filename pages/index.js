@@ -60,7 +60,7 @@ export default function Home() {
 
             <p>There are 3 levels of information.</p>
             <div className="welcome-grid-items">
-              <Link href="/beginner/">
+              <Link href="/beginner/" passHref>
                 <motion.a
                   className="welcome-item"
                   whileHover={{
@@ -77,7 +77,7 @@ export default function Home() {
                   </div>
                 </motion.a>
               </Link>
-              <Link href="/intermediate/">
+              <Link href="/intermediate/" passHref>
                 <motion.a
                   className="welcome-item"
                   whileHover={{
@@ -94,7 +94,7 @@ export default function Home() {
                   </div>
                 </motion.a>
               </Link>
-              <Link href="/expert/">
+              <Link href="/expert/" passHref>
                 <motion.a
                   className="welcome-item"
                   whileHover={{
