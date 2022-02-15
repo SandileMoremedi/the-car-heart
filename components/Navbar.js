@@ -5,7 +5,7 @@ const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   return (
     <nav className="nav">
-      <Link href="/">
+      <Link href="/" passHref>
         <h1>TCH</h1>
       </Link>
       <div
