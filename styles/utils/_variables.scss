@@ -72,3 +72,8 @@ $GOW: "Cinzel", serif;
 $RobotText: "Orbitron", sans-serif;
 
 $SimpleText: "Barlow Condensed", sans-serif;
+@mixin breakpoint($bp: 0) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}

@@ -44,11 +44,11 @@ const Navbar = ({ loggedIn, setLoggedIn }) => {
         </li>
       </ul>
 
-      <div className="profile-settings">
-        <i
-          className="fa-solid fa-toolbox"
-          onClick={() => setTopSettings(!topSettings)}
-        ></i>
+      <div
+        className="profile-settings"
+        onClick={() => setTopSettings(!topSettings)}
+      >
+        <i className="fa-solid fa-toolbox"></i>
         <div className={topSettings ? "options open" : "options"}>
           <ul className="top-settings">
             <li>
@@ -62,8 +62,6 @@ const Navbar = ({ loggedIn, setLoggedIn }) => {
                   onClick={() => {
                     setLoggedIn(false);
                     signOut(auth);
-                    console.log(loggedIn);
-                    localStorage.setItem("logged", "false");
                   }}
                 >
                   Sign Out

@@ -5,20 +5,6 @@ import LoginP from "../components/auth/login";
 import { getFirestore, doc } from "firebase/firestore";
 export default function Login({ setLoggedIn, userCredentials }) {
   const [log, setLog] = useState(null);
-  console.log(userCredentials);
-  useEffect(() => {
-    const check = async () => {
-      const test = JSON.parse(localStorage.getItem("logged"));
-      if (!test) {
-        localStorage.setItem("logged", "false");
-      }
-      if (test == true) {
-        setLoggedIn(true);
-      } else {
-        setLoggedIn(false);
-      }
-    };
-  }, [setLoggedIn]);
 
   if (log == false) {
     return (

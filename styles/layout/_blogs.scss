@@ -4,7 +4,9 @@
     text-align: center;
   }
 }
-.beginner {
+.beginner,
+.expert,
+.indeterminate {
   h1 {
     text-align: center;
   }
@@ -15,7 +17,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   grid-template-rows: 1fr;
-  padding: 0 20px;
+  place-items: center;
 
   .blogs {
     display: grid;
@@ -49,6 +51,11 @@
     }
   }
 }
+.blog-parent {
+  h1 {
+    text-align: center;
+  }
+}
 .notLoggedIn {
   display: flex;
   align-items: center;
@@ -73,20 +80,27 @@
 .indeterminate,
 .expert,
 .blogs {
-  @include lg-max {
-    .main-blogs {
-      grid-template-columns: repeat(3, 1fr) !important;
-    }
-  }
-  @include med-max {
+  @include breakpoint(670px) {
     .main-blogs {
       grid-template-columns: repeat(2, 1fr) !important;
+      // place-items: center;
     }
   }
-  @media (max-width: 550px) {
+  @include breakpoint(1310px) {
     .main-blogs {
-      grid-template-columns: 1fr !important;
-      place-items: center;
+      grid-template-columns: repeat(4, 1fr) !important;
+      // place-items: center;
+    }
+  }
+  @include breakpoint(990px) {
+    .main-blogs {
+      grid-template-columns: repeat(3, 1fr) !important;
+      // place-items: center;
+    }
+  }
+  @include breakpoint(0px) {
+    .main-blogs {
+      grid-template-columns: 1fr;
     }
   }
 }

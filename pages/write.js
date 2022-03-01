@@ -59,7 +59,6 @@ export default function Write({ loggedIn, userDetails }) {
       });
     }
   };
-  console.log(file);
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -78,13 +77,12 @@ export default function Write({ loggedIn, userDetails }) {
   useEffect(() => {
     const getName = async () => {
       users.map((user) => {
-        user.id == userDetails.uid
-          ? setName(user.name)
-          : console.log("Not Yet");
+        user.id == userDetails.uid && setName(user.name);
       });
     };
     getName();
   }, []);
+  console.log(users);
   return (
     <div className="blog-write">
       <Head>
