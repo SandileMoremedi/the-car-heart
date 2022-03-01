@@ -1,63 +1,45 @@
-import { useState } from "react";
-export default function Login() {
-  const [log, setLog] = useState(false);
+import { useState, useEffect } from "react";
+import Head from "next/head";
+import SignIn from "../components/auth/signin";
+import LoginP from "../components/auth/login";
+import { getFirestore, doc } from "firebase/firestore";
+export default function Login({ setLoggedIn, userCredentials }) {
+  const [log, setLog] = useState(null);
+  console.log(userCredentials);
+  useEffect(() => {
+    const check = async () => {
+      const test = JSON.parse(localStorage.getItem("logged"));
+      if (!test) {
+        localStorage.setItem("logged", "false");
+      }
+      if (test == true) {
+        setLoggedIn(true);
+      } else {
+        setLoggedIn(false);
+      }
+    };
+  }, [setLoggedIn]);
+
   if (log == false) {
     return (
-      <div className="login">
-        <h1>Sign Up</h1>
-
-        <form>
-          <label htmlFor="name">Name</label>
-          <input type="text" id="name" placeholder="Enter Name" />
-
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Enter Email"
-          />
-
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Set Password"
-          />
-
-          <button type="submit">Submit</button>
-        </form>
-
-        <p>I have an account</p>
-        <span
-          onClick={() => {
-            setLog(!log);
-          }}
-        >
-          Login In
-        </span>
-      </div>
+      <>
+        <div className="login">
+          <SignIn />
+          <p>I have an account</p>
+          <span
+            onClick={() => {
+              setLog(!log);
+            }}
+          >
+            Login In
+          </span>
+        </div>
+      </>
     );
   } else {
     return (
       <div className="login">
-        <form>
-          <h1>Sign In</h1>
-
-          <label htmlFor="email">Email</label>
-          <input type="text" id="email" placeholder="Enter Email" />
-
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Enter Password"
-          />
-          <button type="submit">Log In</button>
-        </form>
-        <p>Haven&apos;t Made An Account?</p>
+        <LoginP setLoggedIn={setLoggedIn} />
         <span
           onClick={() => {
             setLog(!log);

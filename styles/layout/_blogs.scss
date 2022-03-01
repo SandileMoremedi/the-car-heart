@@ -3,14 +3,6 @@
   h1 {
     text-align: center;
   }
-  // .blog-main {
-  //   display: grid;
-  //   grid-template-columns: repeat(3, 1fr) !important;
-  //   gap: 20px;
-  //   .blog-block {
-  //     max-width: 100px;
-  //   }
-  // }
 }
 .beginner {
   h1 {
@@ -18,32 +10,61 @@
   }
 }
 
-.main-blogs,
-.blog-main {
+.main-blogs {
   display: grid;
-  grid-template-columns: repeat(4, 1fr) !important;
-  grid-template-rows: repeat(300px);
-  padding: 20px;
-  max-width: 1200px;
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
-  .blog {
+  grid-template-rows: 1fr;
+  padding: 0 20px;
+
+  .blogs {
+    display: grid;
+    max-width: 500px;
+    width: 300px;
     background-color: white;
-    border: 2px solid black;
     color: black;
-    max-width: 300px;
-    .blog-link {
-      cursor: pointer;
+    border-radius: 20px;
+    .content {
+      padding: 10px;
+      height: 50%;
+      p {
+        font-size: 1.2rem;
+      }
     }
-    .content,
+    .top-content {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 1.1rem;
+    }
     .image {
       height: 50%;
-      overflow: hidden;
     }
-    .content {
-      padding-left: 20px;
+    img {
+      border-radius: 10px 10px 0 0;
     }
-    p {
-      font-size: 1.2rem;
+    h3 {
+      cursor: pointer;
+    }
+  }
+}
+.notLoggedIn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  a {
+    padding: 20px;
+    border: white 1px solid;
+    border-radius: 30px;
+    color: white;
+    font-size: 1.3rem;
+    text-decoration: none;
+    background-color: black;
+    &:hover {
+      background-color: white;
+      color: black;
     }
   }
 }

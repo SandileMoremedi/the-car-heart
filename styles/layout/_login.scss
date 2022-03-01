@@ -54,3 +54,34 @@
     text-align: center;
   }
 }
+
+.container {
+  display: flex;
+  position: absolute;
+  background-color: black;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  .success,
+  .error {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 3px solid white;
+    border-radius: 30px;
+    padding: 30px;
+    button,
+    a {
+      background-color: white;
+      color: black;
+      padding: 15px 20px;
+      font-size: 1.3rem;
+      border: 1px solid white;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+}

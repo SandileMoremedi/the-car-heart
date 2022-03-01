@@ -4,7 +4,8 @@
   padding-top: 40px;
   display: grid;
   place-items: center;
-  form {
+
+  .form {
     display: flex;
     // flex-direction: column;
     gap: 30px;
@@ -15,11 +16,9 @@
   .write-image {
     width: 60vw;
     height: 300px;
-    img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
+    background: url("../../public/man-walking.jpg");
+    background-size: cover;
+    background-position: center;
   }
   .image-text {
     display: flex;
@@ -69,16 +68,27 @@
     height: max-content;
     // justify-content: center;
     align-items: center;
-    // max-width: 30vw;
+
+    .levels {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      gap: 20px;
+      .sideBtn {
+        padding: 10px;
+        border-radius: 30px;
+        color: white;
+        background-color: black;
+        border: 1px solid white;
+        font-size: 1.3rem;
+      }
+      .sideBtn.pushed {
+        background-color: white !important;
+        color: black !important;
+      }
+    }
     label {
       width: 90%;
-      height: 100px;
-      border: 1px solid white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 10px;
-      cursor: pointer;
     }
     .input-side {
       width: 90%;
@@ -103,11 +113,47 @@
         background-color: black;
         color: white;
       }
+      &:disabled {
+        background-color: grey;
+        color: white;
+      }
+    }
+  }
+}
+.submitted-wrapper {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999999999;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .submitted {
+    padding: 30px;
+    border: 1px solid white !important;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    a {
+      background-color: white;
+      color: black;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 20px;
+      border-radius: 20px;
     }
   }
 }
 @include lg-max {
-  form {
+  .form {
     flex-direction: column !important;
     justify-content: center;
     align-items: center;

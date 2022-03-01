@@ -1,0 +1,29 @@
+.parentBlog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.singleBlog {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  padding: 30px;
+  .sub {
+    margin-top: 30px;
+    .author {
+      color: grey;
+      font-size: 1.5rem;
+    }
+  }
+  h1 {
+    text-align: center;
+  }
+  p {
+    align-items: baseline;
+    font-size: 1.5rem;
+  }
+  .image {
+    display: flex;
+    align-items: center;
+  }
+}

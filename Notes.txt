@@ -1,0 +1,14 @@
+DATE : Sunday 20 February.
+TODO: I need to make terms and condition of the website and the privacy policy
+
+TODO: I have to make the profile, setting and sign in page
+
+TODO: I have to make the sign-in option ready for change with authentication
+
+FIXME: I have to access the MongoDB database and lay the blogs. 
+
+FIXME: I have to set the authentication for each user.
+
+DATE : Sunday 27 February.
+
+FIXME: I have to set the authentication for each user.

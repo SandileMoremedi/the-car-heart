@@ -1,14 +1,22 @@
+// Reasons I used SCSS instead of any UI libraries like Bootstrap, Material UI or React-Bootstrap:
+// 1. SCSS still gives me the challenge of being able to fix things
+// 2. SCSS give me the ability to showcase my ability, and I gain confidence while using it.
+// 3. It's honestly easy to manage unlike using a bunch of component styles.
+
+// FIXME: Start using mixins. You could have done this whole thing way better.
 @import "./base/reset";
 @import "./base/typography";
 @import "./components/navbar";
 @import "./components/buttons";
 @import "./components/welcome-grid";
 @import "./components/footer";
-@import "./layout/levels";
+@import "./layout/singleblog";
+@import "./layout/settings";
 @import "./layout/homepage";
 @import "./layout/login";
 @import "./layout/write";
 @import "./layout/blogs";
+@import "./layout/profile";
 @import "./layout/aboutpage";
 @import "./layout/contactpage";
 @import "./utils/variables";
