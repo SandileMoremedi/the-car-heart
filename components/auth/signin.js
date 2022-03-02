@@ -1,15 +1,18 @@
 import { app } from "../../firebase/config";
 import { useState } from "react";
+import Link from "next/link";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 // This was for the sign up,
 // I needed to store the state of whether someone is logged in somewhere.
 // So I used LocalStorage to store the variable and the name of the user.
-export default function Signup() {
+export default function Signup({ setLoggedIn }) {
   const auth = getAuth(app);
   const [signInEmail, setSignInEmail] = useState("");
   const [signInPassword, setSignInPassword] = useState("");
   const [name, setName] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
   const firestore = getFirestore(app);
   const createUser = (logEmail, logPassword, name) => {
     createUserWithEmailAndPassword(auth, logEmail, logPassword).then((cred) => {
@@ -19,13 +22,40 @@ export default function Signup() {
         name: name,
         bio: "I am passionate user of this blog site and I am willing to share my information with the world.",
       });
+
+      setLoggedIn(true);
+      setSuccess(true);
     });
   };
   return (
     <>
-      <h1>Sign Up</h1>
+      {error && (
+        <div className="container">
+          <div className="error">
+            <h2>Error:</h2>
+            <h3>Password/Email is incorrect!</h3>
+            <button
+              onClick={() => {
+                setError(false);
+              }}
+            >
+              Okay
+            </button>
+          </div>
+        </div>
+      )}
+      {success && (
+        <div className="container">
+          <div className="success">
+            <h2>Logged In</h2>
+            <h3>Welcome Home!</h3>
+            <Link href="/">Thanks</Link>
+          </div>
+        </div>
+      )}
 
       <form>
+        <h1>Sign Up</h1>
         <label htmlFor="name">Name</label>
         <input
           type="text"

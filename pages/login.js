@@ -10,7 +10,7 @@ export default function Login({ setLoggedIn, userCredentials }) {
     return (
       <>
         <div className="login">
-          <SignIn />
+          <SignIn setLoggedIn={setLoggedIn} />
           <p>I have an account</p>
           <span
             onClick={() => {
