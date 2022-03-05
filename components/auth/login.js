@@ -13,7 +13,6 @@ export default function LoginP({ setLoggedIn }) {
       .then((cred) => {
         setLoggedIn(true);
         setSuccess(true);
-        localStorage.setItem("logged", "true");
       })
       .catch((err) => setError(true));
   }
