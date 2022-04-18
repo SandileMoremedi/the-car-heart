@@ -28,45 +28,24 @@ function MyApp({ Component, pageProps, router }) {
 
   return (
     <>
-      <AnimatePresence exitBeforeEnter>
-        <Head>
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-            integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-            crossOrigin="anonymous"
-            referrerPolicy="no-referrer"
-          />
-          <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
-        </Head>
-        <motion.div
-          key={router.route}
-          initial="initial"
-          exit="exit"
-          animate="animate"
-          variants={{
-            exit: {
-              opacity: 0,
-            },
-            initial: {
-              opacity: 0,
-            },
-            animate: {
-              opacity: 1,
-            },
-          }}
-        >
-          <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-          <Component
-            {...pageProps}
-            setLoggedIn={setLoggedIn}
-            loggedIn={loggedIn}
-            userDetails={userDetails}
-          />
-          ;
-          <Footer />
-        </motion.div>
-      </AnimatePresence>
+      <Head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+          integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+        />
+        <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
+      </Head>
+      <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+      <Component
+        {...pageProps}
+        setLoggedIn={setLoggedIn}
+        loggedIn={loggedIn}
+        userDetails={userDetails}
+      />
+      <Footer />
     </>
   );
 }

@@ -16,7 +16,7 @@ export default function Footer() {
           <Image src="/logo.png" width={200} height={200} alt="Logo" />
         </div>
         <div className="privacy-policy">
-          <Link href="/">Privacy Policy</Link>
+          <Link href="/privacy">Privacy Policy</Link>
           <Link href="/">Terms and Conditions</Link>
         </div>
       </div>

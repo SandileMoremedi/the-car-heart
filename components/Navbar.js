@@ -64,10 +64,10 @@ const Navbar = ({ loggedIn, setLoggedIn }) => {
                     signOut(auth);
                   }}
                 >
-                  Sign Out
+                  Sign&nbsp;Out
                 </button>
               ) : (
-                <Link href="/login">Sign In/Up</Link>
+                <Link href="/login">Sign&nbsp;In/Up</Link>
               )}
             </li>
           </ul>

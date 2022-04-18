@@ -104,7 +104,6 @@ ul {
     transition: 1.2s left ease-in-out;
     .bar {
       background-color: black;
-      border-radius: 30px;
       height: 6px;
       width: 35px;
     }
@@ -124,13 +123,15 @@ ul {
   display: flex;
   flex-direction: row;
   font-size: 1.3rem;
-  padding-right: 100px;
+  padding: 10px;
   position: relative;
   cursor: pointer;
+  align-items: flex-end;
+  justify-content: flex-end;
   .top-settings {
     position: absolute;
     top: 40px;
-    left: -70px;
+    right: 0;
     background-color: white;
     padding: 0;
     margin: 0;

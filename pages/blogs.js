@@ -12,22 +12,13 @@ import {
 import { useEffect, useState } from "react";
 import BlogLayout from "../components/blogslayout";
 
-export default function Blogs({ loggedIn }) {
+export default function Blogs({ loggedIn, data }) {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
-    const getData = async () => {
-      const firestore = getFirestore(app);
-      const colRef = collection(firestore, "blogs");
-      const blogsPromise = await getDocs(colRef);
-      setBlogs(
-        blogsPromise.docs.map((blog) => ({
-          ...blog.data(),
-          id: blog.id,
-        }))
-      );
-    };
-    getData();
-  }, []);
+    setBlogs(JSON.parse(data));
+  }, [data]);
+  console.log(blogs);
+
   return (
     <div className="blogs">
       <Head>
@@ -48,4 +39,24 @@ export default function Blogs({ loggedIn }) {
       )}
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const colRef = collection(getFirestore(app), "blogs");
+  var dataBeforeJSON = [];
+  const blogDocs = await getDocs(colRef);
+  const blogPromise = blogDocs.docs;
+  blogPromise.map((blog) => {
+    dataBeforeJSON.push({
+      ...blog.data(),
+      id: blog.id,
+    });
+  });
+  const data = JSON.stringify(dataBeforeJSON);
+
+  return {
+    props: {
+      data,
+    },
+  };
 }

@@ -1,14 +1,10 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import PopLogo from "../components/Home/PopLogo";
-import Welcome from "../components/Home/Welcome";
 
 export default function Home() {
   return (
     <>
-      <PopLogo />
       <motion.div className="home">
         <Head>
           <meta
