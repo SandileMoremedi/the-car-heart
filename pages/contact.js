@@ -1,21 +1,23 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import Modal from "../components/Modal";
 
 export default function Contact() {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [comment, setComment] = useState("");
-  const [sent, setSent] = useState(false);
-  useEffect(() => {
-    setSent(false);
-  }, []);
+  const [sent, setSent] = useState(true);
+
+  async function closeModal() {
+    setTimeout(() => {
+      setSent(false);
+    }, 2000);
+  }
+
   return (
     <div className="contact">
       <Head>
         <title>The Car Heart | Contact</title>
       </Head>
       <h1>Contact Us</h1>
-      <h3>The Comment Was Sent. Thank You!</h3>
+      {sent && <Modal>Comment Was Sent. Thank You!</Modal>}
       <form
         method="POST"
         action="https://formsubmit.co/sandilemoremedi070501@gmail.com"
@@ -23,7 +25,7 @@ export default function Contact() {
         <label htmlFor="name">Name</label>
         <input
           type="text"
-          name="name"
+          name="Name"
           id="name"
           placeholder="Enter Name"
           required
@@ -32,7 +34,7 @@ export default function Contact() {
         <label htmlFor="email">Email</label>
         <input
           type="text"
-          name="email"
+          name="Email"
           id="email"
           placeholder="Enter Email"
           required
@@ -40,7 +42,7 @@ export default function Contact() {
 
         <label htmlFor="comment">Comment</label>
         <textarea
-          name="comment"
+          name="Comment"
           id="comment"
           cols="20"
           rows="5"
@@ -53,6 +55,7 @@ export default function Contact() {
           onClick={(e) => {
             // e.preventDefault();
             setSent(true);
+            closeModal();
           }}
         >
           Submit

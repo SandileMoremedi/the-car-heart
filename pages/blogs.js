@@ -1,23 +1,12 @@
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
-import { app } from "../firebase/config";
-import {
-  getDocs,
-  collection,
-  getFirestore,
-  orderBy,
-  query,
-} from "firebase/firestore";
-import { useEffect, useState } from "react";
 import BlogLayout from "../components/blogslayout";
+import sanityClient from "../sanityconfig";
 
-export default function Blogs({ loggedIn, data }) {
-  const [blogs, setBlogs] = useState([]);
-  useEffect(() => {
-    setBlogs(JSON.parse(data));
-  }, [data]);
-  console.log(blogs);
+export default function Blogs({ data }) {
+  // const { user, loading, error } = useAuth();
+  console.log(data);
 
   return (
     <div className="blogs">
@@ -25,9 +14,9 @@ export default function Blogs({ loggedIn, data }) {
         <title>The Car Heart | Blogs List</title>
       </Head>
       <h1>Blogs</h1>
-      {loggedIn ? (
+      {data ? (
         <div className="main-blogs">
-          {blogs.map((blog, index) => (
+          {data.map((blog, index) => (
             <BlogLayout blog={blog} key={index} />
           ))}
         </div>
@@ -41,22 +30,21 @@ export default function Blogs({ loggedIn, data }) {
   );
 }
 
-export async function getServerSideProps() {
-  const colRef = collection(getFirestore(app), "blogs");
-  var dataBeforeJSON = [];
-  const blogDocs = await getDocs(colRef);
-  const blogPromise = blogDocs.docs;
-  blogPromise.map((blog) => {
-    dataBeforeJSON.push({
-      ...blog.data(),
-      id: blog.id,
-    });
-  });
-  const data = JSON.stringify(dataBeforeJSON);
-
+export const getServerSideProps = async (context) => {
+  const data = await sanityClient.fetch(
+    `
+      *[_type == "post"]{
+        title,
+        "postImage" : mainImage.asset->url, 
+        slug, 
+        body, 
+        _id, 
+        "postAuthor": author->name,
+        _updatedAt
+      }
+      `
+  );
   return {
-    props: {
-      data,
-    },
+    props: { data },
   };
-}
+};

@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useUser } from "@auth0/nextjs-auth0";
 import { useState } from "react";
-import { app } from "../firebase/config";
-import { getAuth, signOut } from "firebase/auth";
 const Navbar = ({ loggedIn, setLoggedIn }) => {
-  const auth = getAuth(app);
+  const { auth, loading, error } = useUser();
   const [navbar, setNavbar] = useState(false);
   const [topSettings, setTopSettings] = useState(false);
   return (
@@ -57,17 +56,10 @@ const Navbar = ({ loggedIn, setLoggedIn }) => {
             </li>
             <li>
               <i className="fa-solid fa-receipt"></i>
-              {loggedIn == true ? (
-                <button
-                  onClick={() => {
-                    setLoggedIn(false);
-                    signOut(auth);
-                  }}
-                >
-                  Sign&nbsp;Out
-                </button>
+              {auth ? (
+                <Link href="/api/auth/logout">Logout</Link>
               ) : (
-                <Link href="/login">Sign&nbsp;In/Up</Link>
+                <Link href="/api/auth/login">Login</Link>
               )}
             </li>
           </ul>
